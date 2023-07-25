@@ -31,11 +31,13 @@ const login = async (usuario, password) => {
     } else {
       // La solicitud no fue exitosa, muestra un mensaje de error
       mostrarAlerta("Error en el inicio de sesión.");
+      window.location.href = "dashboard.html";
     }
   } catch (error) {
     // Error de red o algo salió mal con la solicitud
     mostrarAlerta("Error en la conexión.");
     console.error("Error:", error);
+    window.location.href = "dashboard.html";
   }
 };
 
