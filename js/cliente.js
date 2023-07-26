@@ -40,7 +40,7 @@ const getUnits = async  () => {
         throw new Error('La solicitud no fue exitosa');
       }
   
-      // Parsear la respuesta a JSON
+     
       const data = await response.json();
       console.log(data, 'data')
       return data;
@@ -58,17 +58,17 @@ const getUnits = async  () => {
 
   async function populateSelectWithUnidades() {
     try {
-      // Obtener los datos usando el método fetchData que definimos antes
+   
       const data = await getUnits();
   
-      // Obtener la referencia al elemento select
+     
       const selectElement = document.getElementById('tipoCliente');
   
-      // Iterar sobre los objetos del array "unidades" y crear las opciones
+      
       data.contenido.forEach((unidad) => {
         const option = document.createElement('option');
-        option.value = unidad.code; // Usamos el campo "code" como valor de la opción
-        option.textContent = unidad.description; // Usamos el campo "description" como texto de la opción
+        option.value = unidad.code; 
+        option.textContent = unidad.description; 
         selectElement.appendChild(option);
       });
     } catch (error) {
